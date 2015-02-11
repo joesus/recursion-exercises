@@ -1,3 +1,5 @@
+require 'pry'
+
 # Write a recursive function that computes the sum of all numbers from 1 to n, where n is given as parameter.
 # return the sum 1+ 2+ 3+ ...+ n
 
@@ -24,4 +26,17 @@ end
 def findSum(array, count)
   return 0 if count == 0
   return array[count - 1] += findSum(array, count - 1)
+end
+
+# Write a recursive function that determines whether an array is a palindrome,
+# where the array and its size are given as parameters.
+
+def isPalindrome(string)
+  if string.size == 1 || string.empty?
+    true
+  elsif string[0] == string[- 1]
+    isPalindrome(string[1...-1])
+  else
+    false
+  end
 end
