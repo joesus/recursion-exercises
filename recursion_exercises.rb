@@ -12,11 +12,12 @@ end
 # where the array and its size are given as parameters.
 
 def findMin(array, count)
-  return array[count] if count == 0
-  if array[count - 1] < findMin(array, count - 1)
+  return array[count - 1] if count == 1
+  min_siblings = findMin(array, count - 1)
+  if array[count - 1] < min_siblings
     array[count - 1]
   else
-    findMin(array, count - 1)
+    min_siblings
   end
 end
 
